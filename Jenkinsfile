@@ -1,9 +1,17 @@
 pipeline {
-    agent { docker { image 'maven:3.3.3' } }
+    agent any
+    tools {
+        gradle "Gradle"
+    }
     stages {
-        stage('build') {
+        stage('Checkout') {
             steps {
-                sh 'mvn --version'
+                git 'https://github.com/davyd0309/CarsdawRestApi.git'
+            }
+        }
+        stage('Build'){
+            steps {
+                sh 'gradle build'
             }
         }
     }
