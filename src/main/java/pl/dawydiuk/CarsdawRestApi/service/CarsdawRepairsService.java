@@ -4,6 +4,7 @@ import java.net.SocketTimeoutException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
@@ -20,13 +21,15 @@ public class CarsdawRepairsService {
 
     private static final Logger log = LoggerFactory.getLogger(CarsdawRepairsService.class);
     private final RestTemplate restTemplate;
+    private static final String GET_ALL_REPAIRS_URL = "/repairs";
+    @Value("${services.carsdawRepairsService}")
+    private String carsdawRepairsServiceAddress;
+
 
     @HystrixCommand(fallbackMethod = "reliable")
     public ResponseEntity<String> getAllCarRepairs() {
-        String fooResourceUrl
-                = "http://localhost:8082/repairs";
         log.info("Module with repairs called");
-        return restTemplate.exchange(fooResourceUrl, HttpMethod.GET, HttpEntity.EMPTY, String.class);
+        return restTemplate.exchange(carsdawRepairsServiceAddress + GET_ALL_REPAIRS_URL, HttpMethod.GET, HttpEntity.EMPTY, String.class);
     }
 
     public ResponseEntity<String> reliable() {

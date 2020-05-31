@@ -7,3 +7,7 @@ info:
     description: Entry to app
     version: 0.0.1-SNAPSHOT
 
+services:
+  carsdawRepairsService: http://192.168.99.100:8082
+
+
