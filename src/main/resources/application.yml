@@ -8,6 +8,6 @@ info:
     version: 0.0.1-SNAPSHOT
 
 services:
-  carsdawRepairsService: ${CARSDAW_REPAIRS_HOST:http://localhost:8082}
+  carsdawRepairsService: http://carsdaw-repairs-carsdaw.apps.us-west-1.starter.openshift-online.com
 
 
