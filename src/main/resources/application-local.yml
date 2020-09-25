@@ -1,0 +1,17 @@
+
+
+server:
+  port: 8081
+
+info:
+  app:
+    name: CarsdawRestApi
+    description: Entry to app
+    version: 0.0.1-SNAPSHOT
+
+services:
+  carsdawRepairsService: http://localhost:8082
+
+spring:
+  profiles:
+    active: local

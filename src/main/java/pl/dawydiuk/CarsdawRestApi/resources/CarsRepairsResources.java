@@ -2,6 +2,7 @@ package pl.dawydiuk.CarsdawRestApi.resources;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +25,13 @@ public class CarsRepairsResources {
     public ResponseEntity getAllRepairs() {
         log.info("Send RQ for all repairs");
         return carsdawRepairsService.getAllCarRepairs();
+    }
+
+    @GetMapping
+    @RequestMapping("/test")
+    public ResponseEntity testQ() {
+        log.info("Send RQ for test");
+        return new ResponseEntity<>("Hello KONRAD Test!", HttpStatus.OK);
     }
 
 }
