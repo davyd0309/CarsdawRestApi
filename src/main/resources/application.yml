@@ -2,4 +2,6 @@ spring:
   profiles:
     active: heroku
 
-
+java:
+  runtime:
+    version: 11
