@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+//import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 import lombok.RequiredArgsConstructor;
 import pl.dawydiuk.CarsdawRestApi.properties.ServicesProps;
@@ -22,7 +22,7 @@ public class CarsdawRepairsService {
 
     private final ServicesProps servicesProps;
 
-    @HystrixCommand(fallbackMethod = "reliable")
+//    @HystrixCommand(fallbackMethod = "reliable")
     public ResponseEntity<String> getAllCarRepairs() {
         log.info("Module with repairs called");
         return restTemplate.exchange(servicesProps.getCarsdawRepairsService() + GET_ALL_REPAIRS_URL, HttpMethod.GET, HttpEntity.EMPTY, String.class);

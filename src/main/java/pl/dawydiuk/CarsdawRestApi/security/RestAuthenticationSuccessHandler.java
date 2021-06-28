@@ -22,6 +22,6 @@ public class RestAuthenticationSuccessHandler extends SimpleUrlAuthenticationSuc
                 .withSubject(principal.getUsername())
                 .withExpiresAt(new Date(System.currentTimeMillis() + 36000000))
                 .sign(Algorithm.HMAC256("sdhfhfs%^$^$^)jhdsfhsdHHHwww98w"));
-        response.getOutputStream().print("{\"token\": \"" + token + "\"}");
+        response.getOutputStream().print(token);
     }
 }

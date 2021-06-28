@@ -1,13 +1,11 @@
 plugins {
-    id 'org.springframework.boot' version '2.2.4.RELEASE'
-    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'org.springframework.boot' version '2.4.5'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 }
 
 group = 'pl.dawydiuk'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
-
 
 repositories {
     mavenLocal()
@@ -19,11 +17,11 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-devtools'
-    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-hystrix:2.2.2.RELEASE'
-    implementation 'com.auth0:java-jwt:3.8.3'
-    compile 'org.springframework.boot:spring-boot-starter-aop'
-    compileOnly 'org.projectlombok:lombok:1.18.12'
-    annotationProcessor 'org.projectlombok:lombok:1.18.12'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+//    implementation 'org.springframework.cloud:spring-cloud-starter-hystrix:1.4.7.RELEASE'
+    implementation 'com.auth0:java-jwt:3.16.0'
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
